@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ThermalBasz</title>
+    <!--<link rel="stylesheet" href="bootstrap.min.css" >-->
+    <link rel="stylesheet" href="jquery-ui.min.css" >
+    <link rel="stylesheet" href="jquery-ui.structure.min.css" >
+    <link rel="stylesheet" href="jquery-ui.theme.min.css" >
+    <link rel="stylesheet" href="thermal.css" >
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="jquery-ui.min.js"></script>
+    <script src="thermal.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div id="headbar">
+            <div class="flexPadHolder">
+                <div id="titleBox">ThermalMagic <span id="versionBox">v0.2B</span></div>
+                <div id="copyrightBox">&#169; 2018 <a href="http://www.saddalim.hu" target="_blank">Saddalim Computers</a></div>
+            </div>
+        </div>
+        <div id="middlewrap">
+            <div id="leftbar">
+                <div class="flexPadHolder">
+                    <div id="leftGaugeHolder"></div>
+                </div>
+            </div>
+            <canvas id="thermalCanvas"></canvas>
+            <div id="rightbar">
+                <div class="flexPadHolder">
+                    <div id="rightGaugeHolder"></div>
+                </div>
+            </div>
+        </div>
+        <div id="footbar">
+            <div class="flexPadHolder">
+                <fieldset>
+                    <legend>Temperature</legend>
+
+                    <label><input type="checkbox" class="guiControl" id="cbTempColoring">Coloring</label>
+                    <label><input type="checkbox" class="guiControl" id="cbTempColoringHalf">Half size</label>
+                    <br>
+                    <label>Coloring opacity<input type="number" class="guiControl" id="numTempColoringOpacity" min="0.0" max="1.0" step="0.1"></label>
+                </fieldset>
+                <fieldset>
+                    <legend>Altimeter</legend>
+                    <label><input type="checkbox" class="guiControl" id="cbFullWidthAltLines">Full alt lines</label>
+                    <label><input type="checkbox" class="guiControl" id="cbShowCloudbase">Show cloudbase</label>
+                    <br>
+                    <label>Max altitude [m]<input type="number" class="guiControl altiControl" id="numMaxAltitude" min="1000" max="10000" step="200"></label>
+                    <label>Resolution [m]<input type="number" class="guiControl altiControl" id="numAltitudeResolution" min="100" max="5000" step="100"></label>
+                </fieldset>
+                <fieldset style="display: none;">
+                    <legend>Pressure</legend>
+
+                    <br>
+                    <label>At ground [Pa]<input type="number" class="guiControl" id="numGroundPressure" min="80000.0" max="110000.0" step="100.0"></label>
+                </fieldset>
+                <fieldset>
+                    <legend>Humidity</legend>
+
+                    <label><input type="checkbox" class="guiControl" id="cbHumiColoring" disabled>Coloring</label>
+                    <label><input type="checkbox" class="guiControl" id="cbHumiColoringHalf" disabled>Half size</label>
+                    <br>
+                    <label>Coloring opacity<input type="number" class="guiControl" id="numHumiColoringOpacity" min="0.0" max="1.0" step="0.1"></label>
+                    <label>Absolute [g/m<sup>3</sup>]<input type="number" class="guiControl" id="numAbsoluteHumi" min="0.0" max="80.0" step="0.5"></label>
+                </fieldset>
+                <fieldset>
+                    <legend>Thermal</legend>
+                    <label><input type="checkbox" class="guiControl" id="cbThermalVario">Vario</label>
+                    <label><input type="checkbox" class="guiControl" id="cbLockSolarTemps" disabled>Lock solar to T</label>
+                    <br>
+                    <label>Vario res. [m]<input type="number" class="guiControl" id="numVarioResolution" min="100" max="5000" step="100"></label>
+                    <label>Solar strength<input type="number" class="guiControl" id="numSolarStrength" min="0.0" max="1.0" step="0.1"></label>
+                </fieldset>
+                <fieldset>
+                    <legend>Diagram</legend>
+                    <label><input type="checkbox" class="guiControl" id="cbTempGraph">Temperature</label>
+                    <label><input type="checkbox" class="guiControl" id="cbHumiGraph" disabled>RH</label>
+                    <br>
+                    <label><input type="checkbox" class="guiControl" id="cbPressGraph" disabled>Pressure</label>
+                    <label><input type="checkbox" class="guiControl" id="cbSkewDiagram" disabled>Skew</label>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

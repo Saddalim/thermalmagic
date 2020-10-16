@@ -1,0 +1,278 @@
+
+html, body
+{
+    margin: 0;
+    height: 100%;
+}
+
+body
+{
+    background: #090;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+a
+{
+    color: #000;
+    text-decoration: none;
+}
+
+a:hover
+{
+    text-decoration: underline;
+}
+
+/**********************************************/
+
+div#root
+{
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    height: 100%;
+}
+
+div#headbar
+{
+    background: #fcc;
+    flex: 0 1 50px;
+    -webkit-flex: 0 1 50px;
+    padding: 0;
+}
+
+div#middlewrap
+{
+    background: #999;
+    flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+}
+
+div#leftbar
+{
+    position: relative;
+    background: #ffc;
+    flex: 0 1 150px;
+    -webkit-flex: 0 1 150px;
+}
+
+div#content
+{
+    background: #ccc;
+    flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+}
+
+div#rightbar
+{
+    position: relative;
+    background: #fcf;
+    flex: 0 1 150px;
+    -webkit-flex: 0 1 150px;
+}
+
+div#footbar
+{
+    background: #cfc;
+    flex: 0 1 100px;
+    -webkit-flex: 0 1 100px;
+}
+
+div.flexPadHolder
+{
+    padding: 5px;
+}
+
+/**********************************************/
+
+div#titleBox
+{
+    float: left;
+    margin-left: 14px;
+    margin-top: 3px;
+    font-size: 26px;
+}
+
+span#versionBox
+{
+
+    font-size: 14px;
+}
+
+div#copyrightBox
+{
+    float: right;
+    margin-top: 8px;
+    margin-right: 14px;
+}
+
+/**********************************************/
+
+canvas#thermalCanvas
+{
+    background: linear-gradient(#c7dee8, #b0c7e8);
+    flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+    overflow: hidden;
+}
+
+/**********************************************/
+/*   GAUGES   */
+/**********************************************/
+
+div.gaugeBox
+{
+    position: absolute;
+    font-size: 14px;
+    width: 145px;
+}
+
+div.gaugeBox, .sliderGauge
+{
+    height: 15px !important;
+}
+
+.ui-slider, .ui-slider-handle
+{
+    height: 22px !important;
+}
+
+div.temperatureGaugeBox
+{
+    left: 0;
+    padding-left: 5px;
+}
+
+div.windGaugeBox
+{
+    left: 0;
+    padding-left: 5px;
+}
+
+div.humiGaugeBox
+{
+    font-family: "Arial Narrow", sans-serif;
+    left: 0;
+    padding-left: 5px;
+}
+
+input.temperatureGauge, input.windGauge, input.humiGauge
+{
+    width: 100px;
+}
+
+div#footbar fieldset
+{
+    display: inline;
+    padding: 8px 8px 2px 8px;
+    height: 72px;
+}
+
+div#footbar fieldset legend
+{
+    margin-bottom: -8px;
+    margin-left: 5px;
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 20px;
+}
+
+div#footbar fieldset input
+{
+    margin: 6px;
+}
+
+.slider
+{
+    position: absolute;
+    left: 50%;
+    top: 10px;
+    /*opacity: 0;*/
+    cursor: e-resize !important;
+    opacity: 1;
+    background: #fff;
+}
+
+div.temperatureGaugeBox .slider, div.windGaugeBox .slider, div.humiGaugeBox .slider
+{
+    margin-left: -70px;
+}
+
+.sliderGauge
+{
+    position: relative;
+    margin-bottom: 20px;
+    padding: 3px 6px;
+    font-size: 16px;
+    border: 0;
+    outline: none;
+    cursor: e-resize !important;
+    margin-right: 6px;
+    font-weight: bold;
+}
+
+.sliderGauge::-webkit-outer-spin-button,
+.sliderGauge::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.ui-slider
+{
+    /*opacity: 0;*/
+    background: rgba(0, 0, 0, 0);
+    top: 0 !important;
+    border-radius: 5px !important;
+    cursor: e-resize !important;
+}
+
+.ui-slider-handle
+{
+    opacity: 0;
+    /*background: red !important;*/
+    top: -1px !important;
+    outline: none !important;
+    cursor: e-resize !important;
+}
+
+.ui-slider-range
+{
+    opacity: 1;
+    background: rgba(255, 0, 0, 0.6);
+
+}
+
+div.temperatureGaugeBox .ui-slider-range
+{
+    background: -moz-linear-gradient(left, rgba(50, 50, 250, 0.5) 0%, rgba(255, 0, 0, 0.6) 100px); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(50, 50, 250, 0.5)), color-stop(100px, rgba(255, 0, 0, 0.6))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, rgba(50, 50, 250, 0.5) 0%, rgba(255, 0, 0, 0.6) 100px); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, rgba(50, 50, 250, 0.5) 0%, rgba(255, 0, 0, 0.6) 100px); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, rgba(50, 50, 250, 0.5) 0%, rgba(255, 0, 0, 0.6) 100px); /* IE10+ */
+    background: linear-gradient(to right, rgba(50, 50, 250, 0.5) 0%, rgba(255, 0, 0, 0.6) 100px); /* W3C */
+}
+
+div.windGaugeBox .ui-slider-range
+{
+    opacity: 0;
+}
+
+div.windGaugeBox .ui-slider-handle
+{
+    opacity: 1;
+    background: #f66;
+}
+
+div.humiGaugeBox .ui-slider-range
+{
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0.5) 0%, rgba(0, 119, 255, 0.6) 100px); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0.5)), color-stop(100px, rgba(0, 119, 255, 0.6))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0.5) 0%, rgba(0, 119, 255, 0.6) 100px); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 0.5) 0%, rgba(0, 119, 255, 0.6) 100px); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, rgba(255, 255, 255, 0.5) 0%, rgba(0, 119, 255, 0.6) 100px); /* IE10+ */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.5) 0%, rgba(0, 119, 255, 0.6) 100px); /* W3C */
+}
